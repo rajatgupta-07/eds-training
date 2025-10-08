@@ -1,21 +1,79 @@
+/* 🌌 Ultra-Modern Glassy Footer */
 footer {
-  background-color: var(--light-color);
+  background-color: rgba(255, 255, 255, 0.05); /* Slight transparency */
   font-size: var(--body-font-size-xs);
+  color: #f4faff;
+  backdrop-filter: blur(12px) saturate(150%); /* Glass effect */
+  box-shadow: 0 -6px 30px rgba(0, 0, 0, 0.25); /* Subtle depth */
+  border-top-left-radius: 24px;
+  border-top-right-radius: 24px;
+  padding: 24px 0;
+  position: relative;
+  overflow: hidden;
 }
 
+/* Decorative glowing overlay for subtle neon effect */
+footer::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle at center, rgba(255, 204, 0, 0.15), transparent 70%);
+  pointer-events: none;
+  animation: glowRotate 20s linear infinite;
+}
+
+@keyframes glowRotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Container inside footer */
 footer .footer > div {
   margin: auto;
   max-width: 1200px;
-  padding: 40px 24px 24px;
-  background-color: rgb(26, 49, 179);
+  padding: 60px 24px 32px;
+  background: rgba(26, 49, 179, 0.8); /* Semi-transparent for glassy gradient effect */
+  border-radius: 28px; /* Extra rounded corners */
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3); /* Depth for floating card */
+  backdrop-filter: blur(10px) saturate(120%);
+  transition: transform 0.35s ease, box-shadow 0.35s ease, background 0.3s ease;
 }
 
+/* Hover effect for footer container */
+footer .footer > div:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.4);
+  background: rgba(26, 49, 179, 0.95);
+}
+
+/* Footer paragraph */
 footer .footer p {
   margin: 0;
+  color: #e0e4ff;
+  line-height: 1.6;
+  text-shadow: 0 0 2px rgba(0,0,0,0.25);
 }
 
-@media (width >= 900px) {
+/* Footer links styling */
+footer .footer a {
+  color: #ffffffcc;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  border-radius: 8px;
+  padding: 2px 4px;
+}
+footer .footer a:hover {
+  color: #ffcc00;
+  text-shadow: 0 0 6px #ffcc00;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Responsive padding for larger screens */
+@media (min-width: 900px) {
   footer .footer > div {
-    padding: 40px 32px 24px;
+    padding: 60px 48px 40px;
   }
 }
